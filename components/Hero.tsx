@@ -12,18 +12,12 @@ export default function Hero() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="flex justify-center mb-6">
               <div className="relative">
-                <div className="w-32 h-32 rounded-full overflow-hidden shadow-xl ring-4 ring-blue-200">
+                <div className="w-64 h-64 rounded-full overflow-hidden shadow-xl ring-4 ring-blue-200">
                   <img
-                    src="/placeholder.svg?height=128&width=128"
+                    src="/my-photo.jpg?height=128&width=128"
                     alt="Aulia Rizqi Hidayatunnisa"
                     className="w-full h-full object-cover"
                   />
-                </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center shadow-lg">
-                  <Star className="h-4 w-4 text-white" />
-                </div>
-                <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full flex items-center justify-center shadow-lg">
-                  <Heart className="h-4 w-4 text-white" />
                 </div>
               </div>
             </div>
@@ -32,11 +26,11 @@ export default function Hero() {
               Aulia Rizqi Hidayatunnisa
             </h1>
             <p className="text-xl sm:text-2xl text-blue-700 mb-8 max-w-3xl mx-auto font-medium">
-              Startup Hustler | Project Builder | Growth-Oriented Thinker
+              Growth-Oriented Thinker
             </p>
             <p className="text-lg text-blue-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Mahasiswa Sistem Informasi Universitas Indonesia dengan minat mendalam dan pengalaman praktis dalam
-              manajemen proyek, pengembangan produk startup, dan eksekusi strategis.
+              Individu proaktif dan adaptif dengan semangat hustler. Berpengalaman dalam penjualan, pemasaran,
+              dan memimpin eksekusi proyek, dengan fokus pada solusi nyata dan kolaborasi tim yang efektif.
             </p>
           </motion.div>
 
@@ -58,10 +52,10 @@ export default function Hero() {
               size="lg"
               variant="outline"
               className="border-2 border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white px-8 py-3 text-lg rounded-full transition-all duration-300 bg-transparent"
-              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })}
             >
               <Zap className="mr-2 h-5 w-5" />
-              Lihat Proyek Saya
+              Lihat Pengalaman Saya
             </Button>
           </motion.div>
         </div>
