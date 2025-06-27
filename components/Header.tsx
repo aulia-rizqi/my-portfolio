@@ -21,10 +21,11 @@ export default function Header() {
   }
 
   const menuItems = [
+    { id: "hero", label: "Beranda" },
     { id: "about", label: "Tentang" },
+    { id: "skill", label: "Keahlian" },
     { id: "experience", label: "Pengalaman" },
     { id: "achievements", label: "Prestasi" },
-    { id: "projects", label: "Proyek" },
     { id: "contact", label: "Kontak" },
   ]
 
@@ -35,9 +36,6 @@ export default function Header() {
           {/* Logo */}
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
-                <Sparkles className="h-4 w-4 text-white" />
-              </div>
               <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Aulia Rizqi
               </h1>

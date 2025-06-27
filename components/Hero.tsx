@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Hero() {
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <section id="hero" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
