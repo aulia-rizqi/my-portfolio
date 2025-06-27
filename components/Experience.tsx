@@ -5,13 +5,31 @@ import { Award, Sparkles } from "lucide-react"
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { experiences, type ExperienceData } from "@/data/experiences"
+import { experiences, type Experience } from "@/data/experiences"
 import { getIcon } from "@/utils/icons"
 import { fadeInUp, staggerContainer } from "@/utils/animations"
 import ExperienceModal from "./ExperienceModal"
 
 export default function ExperienceComponent() {
-  const [selectedExperience, setSelectedExperience] = useState<ExperienceData | null>(null)
+  const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null)
+
+  // Function to determine grid layout based on number of items
+  const getGridLayout = (itemCount: number) => {
+    if (itemCount === 1) return "grid-cols-1 max-w-md mx-auto"
+    if (itemCount === 2) return "grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto"
+    if (itemCount % 3 === 1 && itemCount > 3) {
+      // When remainder is 1, center the last item
+      return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+    }
+    if (itemCount % 3 === 2 && itemCount > 3) {
+      // When remainder is 2, center the last two items
+      return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+    }
+    return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+  }
+
+  const gridLayout = getGridLayout(experiences.length)
+  const shouldCenterLastItems = experiences.length % 3 !== 0 && experiences.length > 3
 
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/70 backdrop-blur-sm">
@@ -38,90 +56,106 @@ export default function ExperienceComponent() {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className={`grid ${gridLayout} gap-6 lg:gap-8`}
         >
-          {experiences.map((experience, index) => (
-            <motion.div key={experience.id} variants={fadeInUp} className="flex">
-              <Card
-                className="w-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl overflow-hidden cursor-pointer hover:-translate-y-1 flex flex-col"
-                onClick={() => setSelectedExperience(experience)}
+          {experiences.map((experience, index) => {
+            // Determine if this item should be centered
+            const isLastRow = shouldCenterLastItems && index >= experiences.length - (experiences.length % 3)
+            const centerClass = isLastRow ? "lg:col-start-2" : ""
+
+            // For 2 items remainder, center both items
+            const isTwoItemsRemainder = experiences.length % 3 === 2 && index >= experiences.length - 2
+            const twoItemsCenterClass = isTwoItemsRemainder && index === experiences.length - 2 ? "lg:col-start-2" : ""
+
+            return (
+              <motion.div
+                key={experience.id}
+                variants={fadeInUp}
+                className={`flex ${centerClass} ${twoItemsCenterClass}`}
               >
-                {experience.hasImage && (
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={experience.mainImage || "/placeholder.svg"}
-                      alt={experience.title}
-                      className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  </div>
-                )}
-                <CardHeader className="pb-3 flex-shrink-0">
-                  <div className="flex items-center gap-2 sm:gap-3 mb-3">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                      {getIcon(experience.iconType)}
+                <Card
+                  className="w-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl overflow-hidden cursor-pointer hover:-translate-y-1 flex flex-col"
+                  onClick={() => setSelectedExperience(experience)}
+                >
+                  {experience.hasImage && (
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={experience.mainImage || "/placeholder.svg"}
+                        alt={experience.title}
+                        className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     </div>
-                    <Badge className="bg-blue-100 text-blue-700 border-blue-200 rounded-full px-2 sm:px-3 py-1 text-xs sm:text-sm">
-                      {experience.period}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-blue-800 text-lg sm:text-xl leading-tight">{experience.title}</CardTitle>
-                  <CardDescription className="text-base sm:text-lg font-medium text-indigo-600">
-                    {experience.company}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col justify-between">
-                  <div>
-                    <p className="text-blue-700 text-sm sm:text-base leading-relaxed mb-4">{experience.description}</p>
-
-                    {/* Bullet Points */}
-                    <ul className="space-y-2 mb-4">
-                      {experience.bulletPoints.slice(0, 3).map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-blue-600">
-                          <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                      {experience.bulletPoints.length > 3 && (
-                        <li className="text-xs text-indigo-500 italic">
-                          +{experience.bulletPoints.length - 3} poin lainnya...
-                        </li>
-                      )}
-                    </ul>
-
-                    {/* Links Preview */}
-                    {experience.links && experience.links.length > 0 && (
-                      <div className="flex flex-wrap gap-1 mb-3">
-                        {experience.links.slice(0, 2).map((link, idx) => (
-                          <Badge
-                            key={idx}
-                            variant="outline"
-                            className="text-xs bg-indigo-50 text-indigo-600 border-indigo-200"
-                          >
-                            {link.type === "github" && "🔗"}
-                            {link.type === "external" && "🌐"}
-                            {link.type === "article" && "📄"} {link.title}
-                          </Badge>
-                        ))}
-                        {experience.links.length > 2 && (
-                          <Badge variant="outline" className="text-xs bg-gray-50 text-gray-600">
-                            +{experience.links.length - 2} link
-                          </Badge>
-                        )}
+                  )}
+                  <CardHeader className="pb-3 flex-shrink-0">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                        {getIcon(experience.iconType)}
                       </div>
-                    )}
-                  </div>
+                      <Badge className="bg-blue-100 text-blue-700 border-blue-200 rounded-full px-2 sm:px-3 py-1 text-xs sm:text-sm">
+                        {experience.period}
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-blue-800 text-lg sm:text-xl leading-tight">{experience.title}</CardTitle>
+                    <CardDescription className="text-base sm:text-lg font-medium text-indigo-600">
+                      {experience.company}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col justify-between">
+                    <div>
+                      {/* <p className="text-blue-700 text-sm sm:text-base leading-relaxed mb-4">
+                        {experience.description}
+                      </p> */}
 
-                  <div className="flex items-center gap-2 text-xs sm:text-sm text-indigo-600 mt-4 pt-2 border-t border-blue-100">
-                    <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-                    <span>
-                      {experience.hasImage ? "Klik untuk detail dan galeri foto" : "Klik untuk detail lengkap"}
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                      {/* Bullet Points */}
+                      <ul className="space-y-2 mb-4">
+                        {experience.bulletPoints.slice(0, 3).map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-blue-600">
+                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                        {experience.bulletPoints.length > 3 && (
+                          <li className="text-xs text-indigo-500 italic">
+                            +{experience.bulletPoints.length - 3} poin lainnya...
+                          </li>
+                        )}
+                      </ul>
+
+                      {/* Links Preview */}
+                      {experience.links && experience.links.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mb-3">
+                          {experience.links.slice(0, 2).map((link, idx) => (
+                            <Badge
+                              key={idx}
+                              variant="outline"
+                              className="text-xs bg-indigo-50 text-indigo-600 border-indigo-200"
+                            >
+                              {link.type === "github" && "🔗"}
+                              {link.type === "external" && "🌐"}
+                              {link.type === "article" && "📄"} {link.title}
+                            </Badge>
+                          ))}
+                          {experience.links.length > 2 && (
+                            <Badge variant="outline" className="text-xs bg-gray-50 text-gray-600">
+                              +{experience.links.length - 2} link
+                            </Badge>
+                          )}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-indigo-600 mt-4 pt-2 border-t border-blue-100">
+                      <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                      <span>
+                        {experience.hasImage ? "Klik untuk detail dan galeri foto" : "Klik untuk detail lengkap"}
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )
+          })}
         </motion.div>
       </div>
 

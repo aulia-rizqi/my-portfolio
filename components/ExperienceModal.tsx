@@ -16,13 +16,13 @@ export default function ExperienceModal({ experience, onClose }: ExperienceModal
 
   const nextImage = () => {
     if (experience && experience.gallery) {
-      setCurrentImageIndex((prev) => (prev + 1) % experience.gallery.length)
+      setCurrentImageIndex((prev) => (prev + 1) % (experience.gallery?.length || 1))
     }
   }
 
   const prevImage = () => {
-    if (experience && experience.gallery) {
-      setCurrentImageIndex((prev) => (prev - 1 + experience.gallery.length) % experience.gallery.length)
+    if (experience && experience.gallery && experience.gallery.length > 0) {
+      setCurrentImageIndex((prev) => (prev - 1 + experience.gallery!.length) % experience.gallery!.length)
     }
   }
 
@@ -87,7 +87,7 @@ export default function ExperienceModal({ experience, onClose }: ExperienceModal
             )}
 
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl sm:rounded-2xl p-4 sm:p-6">
-              <p className="text-blue-800 leading-relaxed text-sm sm:text-base mb-4">{experience.description}</p>
+              {/* <p className="text-blue-800 leading-relaxed text-sm sm:text-base mb-4">{experience.description}</p> */}
 
               {/* Full Bullet Points */}
               <div className="space-y-3">
