@@ -129,7 +129,7 @@ export const experiences: Experience[] = [
     ],
     hasImage: true,
     mainImage: "/experiences/kepmas/1.jpg",
-    gallery: ["/experiences/kepmas/1.jpg", "/experiences/kepmas/2.jpg", "/experiences/kepmas/3.jpg"],
+    gallery: ["/experiences/kepmas/1.jpg", "/experiences/kepmas/2.jpg"],
     iconType: "sparkles",
     links: [
       {
