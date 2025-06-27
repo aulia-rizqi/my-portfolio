@@ -24,12 +24,12 @@ export default function AboutMe() {
           </h2>
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-lg">
             <p className="text-lg text-blue-800 leading-relaxed">
-              Sebagai mahasiswa Sistem Informasi yang penuh semangat di Universitas Indonesia, saya membawa pengalaman
-              kepemimpinan yang luas dan keterlibatan organisasi ke setiap proyek yang saya kerjakan. Keahlian saya
-              terletak pada memimpin rapat yang efektif, menulis Product Requirements Documents (PRD) yang komprehensif,
-              dan mengeksekusi proyek teknologi dan sosial yang berdampak tepat waktu. Saya berkembang dalam lingkungan
-              startup yang dinamis di mana saya dapat menggabungkan pemikiran strategis dengan eksekusi langsung untuk
-              mendorong hasil yang bermakna dan mendorong kolaborasi tim.
+              Saya adalah mahasiswa Sistem Informasi di Universitas Indonesia yang dikenal sebagai pribadi proaktif, adaptif, dan berorientasi pada eksekusi. Saya memiliki pengalaman memimpin proyek teknologi dan sosial, menyusun dokumen kebutuhan produk, dan mengelola tim dengan efisien untuk mencapai target secara tepat waktu.
+              Dengan semangat hustler, saya juga terjun langsung dalam aktivitas penjualan dan pemasaran.
+            </p>
+            <p className="text-lg text-blue-800 leading-relaxed mt-4">
+              Saya pernah menjual produk sebagai owner dan sales operator, serta membantu promosi produk dalam event besar seperti COMPFEST UI. Pengalaman ini membentuk kemampuan saya dalam memahami pasar, berinteraksi dengan pelanggan, dan menjalankan strategi secara langsung.
+              Saya tumbuh di lingkungan yang dinamis, di mana saya terbiasa menggabungkan pemikiran strategis dengan tindakan nyata. Saya percaya pada kolaborasi tim yang kuat, solusi yang praktis, dan hasil yang terukur.
             </p>
           </div>
         </motion.div>
