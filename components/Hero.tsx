@@ -30,7 +30,7 @@ export default function Hero() {
             </p>
             <p className="text-lg text-blue-600 mb-12 max-w-2xl mx-auto leading-relaxed">
               Individu proaktif dan adaptif dengan ketertarikan di Project Management. 
-              Berpengalaman dalam komunikasi, kepemimpinan, serta pengelolaan proyek
+              Berpengalaman dalam komunikasi, kepemimpinan, serta pengelolaan proyek.
             </p>
           </motion.div>
 
