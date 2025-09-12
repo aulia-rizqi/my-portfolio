@@ -200,20 +200,21 @@ export const experiences: Experience[] = [
     gallery: ["/experiences/bem/1.jpg", "/experiences/bem/2.jpg", "/experiences/bem/3.jpg"],
     iconType: "sparkles",
   },
-  {
+{
     id: 10,
-    title: "Owner & Sales Operator",
-    company: "Frozen Food and Mineral Water Stand at Car Free Day",
-    period: "2024 - Sekarang",
-    description: "Merintis bisnis frozen food & mengelola operasional harian.",
+    title: "CEO & Founder StartUp TemanMu",
+    company: "TemanMu",
+    period: "Juli-Sekarang",
+    description: "Memimpin arah visi, strategi, dan pengembangan TemanMu",
     bulletPoints: [
-      "Merancang & menjalankan bisnis frozen food",
-      "Kelola operasional harian & penjualan",
-      "Bangun kepercayaan pelanggan",
-      "Promosi & penjualan langsung di CFD",
-      "Kelola stok & cash flow"
+      "Menetapkan visi, strategi, dan arah perusahaan",
+      "Memimpin tim serta mengawasi pengembangan produk",
+      "Mengelola operasional dan menjaga keberlanjutan bisnis",
+      "Menjadi representasi utama startup di publik",
     ],
-    hasImage: false,
+    hasImage: true,
+    mainImage: "/experiences/ui-incubate/fotobareng.jpg",
+    gallery: ["/experiences/ui-incubate/fotobareng.jpg", "/experiences/ui-incubate/fotosendiri.jpg"],
     iconType: "sparkles",
   },
 ];
