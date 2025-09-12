@@ -29,8 +29,8 @@ export default function Hero() {
               Growth-Oriented Thinker
             </p>
             <p className="text-lg text-blue-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Individu proaktif dan adaptif dengan semangat hustler. Berpengalaman dalam penjualan, pemasaran,
-              dan memimpin eksekusi proyek, dengan fokus pada solusi nyata dan kolaborasi tim yang efektif.
+              Individu proaktif dan adaptif dengan ketertarikan di Project Management. 
+              Berpengalaman dalam komunikasi, kepemimpinan, serta pengelolaan proyek
             </p>
           </motion.div>
 

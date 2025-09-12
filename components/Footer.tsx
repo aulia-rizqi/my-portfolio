@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto text-center">
         <div className="flex justify-center items-center gap-2 mb-4">
           <p className="text-blue-100">
-            © {new Date().getFullYear()} Aulia Rizqi Hidayatunnisa. Dibuat dengan penuh semangat dan tujuan.
+            © {new Date().getFullYear()} Aulia Rizqi Hidayatunnisa.
           </p>
         </div>
       </div>

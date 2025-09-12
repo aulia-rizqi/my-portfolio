@@ -24,12 +24,12 @@ export default function AboutMe() {
           </h2>
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-lg">
             <p className="text-lg text-blue-800 leading-relaxed">
-              Saya adalah mahasiswa Sistem Informasi di Universitas Indonesia yang dikenal sebagai pribadi proaktif, adaptif, dan berorientasi pada eksekusi. Saya memiliki pengalaman memimpin proyek teknologi dan sosial, menyusun dokumen kebutuhan produk, dan mengelola tim dengan efisien untuk mencapai target secara tepat waktu.
-              Dengan semangat hustler, saya juga terjun langsung dalam aktivitas penjualan dan pemasaran.
+              Saya adalah mahasiswa Sistem Informasi Universitas Indonesia yang dikenal sebagai individu proaktif, adaptif, dan berorientasi pada eksekusi. Berpengalaman memimpin proyek teknologi maupun sosial, 
+              menyusun dokumen kebutuhan produk, serta mengelola tim secara efisien untuk mencapai target tepat waktu.
             </p>
             <p className="text-lg text-blue-800 leading-relaxed mt-4">
-              Saya pernah menjual produk sebagai owner dan sales operator, serta membantu promosi produk dalam event besar seperti COMPFEST UI. Pengalaman ini membentuk kemampuan saya dalam memahami pasar, berinteraksi dengan pelanggan, dan menjalankan strategi secara langsung.
-              Saya tumbuh di lingkungan yang dinamis, di mana saya terbiasa menggabungkan pemikiran strategis dengan tindakan nyata. Saya percaya pada kolaborasi tim yang kuat, solusi yang praktis, dan hasil yang terukur.
+              Saya terbiasa bekerja dalam lingkungan yang dinamis, mengoordinasikan berbagai pemangku kepentingan, dan memastikan proyek berjalan sesuai rencana. Pengalaman ini mengasah kemampuan saya dalam kepemimpinan, 
+              pengambilan keputusan, serta membangun kolaborasi tim yang solid. Saya percaya pada solusi praktis, eksekusi yang terukur, dan hasil yang berkelanjutan.
             </p>
           </div>
         </motion.div>

@@ -20,6 +20,23 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: 0,
+    title: "CEO & Founder StartUp TemanMu",
+    company: "TemanMu",
+    period: "Juli-Sekarang",
+    description: "Memimpin arah visi, strategi, dan pengembangan TemanMu",
+    bulletPoints: [
+      "Menetapkan visi, strategi, dan arah perusahaan",
+      "Memimpin tim serta mengawasi pengembangan produk",
+      "Mengelola operasional dan menjaga keberlanjutan bisnis",
+      "Menjadi representasi utama startup di publik",
+    ],
+    hasImage: true,
+    mainImage: "/experiences/ui-incubate/fotobareng.jpg",
+    gallery: ["/experiences/ui-incubate/fotobareng.jpg", "/experiences/ui-incubate/fotosendiri.jpg"],
+    iconType: "sparkles",
+  },
+  {
     id: 1,
     title: "Marketing and Communications Intern",
     company: "Radio Singosari FM Brebes",
@@ -200,21 +217,5 @@ export const experiences: Experience[] = [
     gallery: ["/experiences/bem/1.jpg", "/experiences/bem/2.jpg", "/experiences/bem/3.jpg"],
     iconType: "sparkles",
   },
-{
-    id: 10,
-    title: "CEO & Founder StartUp TemanMu",
-    company: "TemanMu",
-    period: "Juli-Sekarang",
-    description: "Memimpin arah visi, strategi, dan pengembangan TemanMu",
-    bulletPoints: [
-      "Menetapkan visi, strategi, dan arah perusahaan",
-      "Memimpin tim serta mengawasi pengembangan produk",
-      "Mengelola operasional dan menjaga keberlanjutan bisnis",
-      "Menjadi representasi utama startup di publik",
-    ],
-    hasImage: true,
-    mainImage: "/experiences/ui-incubate/fotobareng.jpg",
-    gallery: ["/experiences/ui-incubate/fotobareng.jpg", "/experiences/ui-incubate/fotosendiri.jpg"],
-    iconType: "sparkles",
-  },
+
 ];
