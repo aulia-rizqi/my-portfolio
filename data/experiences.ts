@@ -21,6 +21,26 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: 0,
+    title: "Technical Writer Intern",
+    company: "Direktorat Transformasi Digital Universitas Indonesia",
+    period: "Sekarang",
+    description: "Menyusun dokumen-dokumen teknis",
+    bulletPoints: [
+      "Menyusun dan memperbarui dokumentasi teknis sistem dan aplikasi digital yang dikembangkan oleh direktorat",
+      "Berkoordinasi dengan tim pengembang, UI/UX, dan analis sistem untuk memahami kebutuhan dokumentasi",
+      "Menulis laporan kemajuan proyek serta dokumentasi hasil evaluasi dan monitoring sistem digital",
+      "Menyusun Business Requirement Document (BRD) untuk mendefinisikan kebutuhan bisnis dan tujuan pengembangan sistem",
+      "Membuat Functional Specification Document (FSD) yang menjabarkan fungsi dan fitur sistem secara detail",
+      "Menulis Technical Specification Document (TSD) yang berisi spesifikasi teknis dan arsitektur sistem",
+      "Menyusun User Manual sebagai panduan penggunaan sistem untuk end-user dan administrator",
+    ],
+    hasImage: true,
+    mainImage: "/experiences/dtd/1.webp",
+    gallery: ["/experiences/dtd/1.webp"],
+    iconType: "sparkles",
+  },
+  {
+    id: 1,
     title: "CEO & Founder StartUp TemanMu",
     company: "TemanMu",
     period: "Juli-Sekarang",
@@ -37,7 +57,7 @@ export const experiences: Experience[] = [
     iconType: "sparkles",
   },
   {
-    id: 1,
+    id: 2,
     title: "Marketing and Communications Intern",
     company: "Radio Singosari FM Brebes",
     period: "Jan 2024",
@@ -56,7 +76,7 @@ export const experiences: Experience[] = [
     iconType: "sparkles",
   },
   {
-    id: 2,
+    id: 3,
     title: "Product Manager Intern",
     company: "Nodewave",
     period: "Jul - Nov 2024",
@@ -74,7 +94,7 @@ export const experiences: Experience[] = [
     iconType: "sparkles",
   },
   {
-    id: 3,
+    id: 4,
     title: "Staf Divisi Sponsorship",
     company: "COMPFEST 15",
     period: "Apr - Nov 2023",
@@ -90,7 +110,7 @@ export const experiences: Experience[] = [
     iconType: "sparkles",
   },
   {
-    id: 4,
+    id: 5,
     title: "Project Officer Rumah Belajar Sintesa",
     company: "SINTESA UI",
     period: "Mar - Jun 2024",
@@ -108,7 +128,7 @@ export const experiences: Experience[] = [
     iconType: "sparkles",
   },
   {
-    id: 5,
+    id: 6,
     title: "Scrum Master",
     company: "Project RELIC - Laboratorium Filologi UI",
     period: "Agu - Okt 2024",
@@ -133,7 +153,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Penanggung Jawab Infografis & Website",
     company: "Kepedulian Masyarakat Jaranan Kidal",
     period: "Sep - Nov 2023",
@@ -167,7 +187,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Person in Charge Divisi Hubungan Masyarakat",
     company: "SIWAK-NG 2023",
     period: "Agu - Nov 2023",
@@ -181,23 +201,6 @@ export const experiences: Experience[] = [
     hasImage: true,
     mainImage: "/experiences/siwak/1.jpg",
     gallery: ["/experiences/siwak/1.jpg", "/experiences/siwak/2.jpg"],
-    iconType: "sparkles",
-  },
-  {
-    id: 8,
-    title: "Staf Divisi Marketing",
-    company: "Coolyeah UI",
-    period: "Jul - Okt 2022",
-    description: "Membuat konten pemasaran digital kreatif & kampanye.",
-    bulletPoints: [
-      "Membuat konten pemasaran digital",
-      "Inisiasi & eksekusi kampanye kreatif",
-      "Kolaborasi lintas divisi",
-      "Memonitor tren media sosial"
-    ],
-    hasImage: true,
-    mainImage: "/experiences/coolyeah/1.jpg",
-    gallery: ["/experiences/coolyeah/1.jpg"],
     iconType: "sparkles",
   },
   {
