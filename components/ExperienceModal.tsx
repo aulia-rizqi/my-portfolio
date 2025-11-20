@@ -4,10 +4,10 @@ import { useState } from "react"
 import { ChevronLeft, ChevronRight, Target, Star, ExternalLink, Code, BookOpen } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import type { Experience } from "@/data/experiences"
+import type { OrgExperience } from "@/data/org_experiences"
 
 interface ExperienceModalProps {
-  experience: Experience | null
+  experience: OrgExperience | null
   onClose: () => void
 }
 

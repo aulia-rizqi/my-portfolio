@@ -5,13 +5,13 @@ import { Award, Sparkles } from "lucide-react"
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { experiences, type Experience } from "@/data/experiences"
+import { org_experiences, type OrgExperience } from "@/data/org_experiences"
 import { getIcon } from "@/utils/icons"
 import { fadeInUp, staggerContainer } from "@/utils/animations"
 import ExperienceModal from "./ExperienceModal"
 
 export default function ExperienceComponent() {
-  const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null)
+  const [selectedExperience, setSelectedExperience] = useState<OrgExperience | null>(null)
 
   // Function to determine grid layout based on number of items
   const getGridLayout = (itemCount: number) => {
@@ -28,8 +28,8 @@ export default function ExperienceComponent() {
     return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
   }
 
-  const gridLayout = getGridLayout(experiences.length)
-  const shouldCenterLastItems = experiences.length % 3 !== 0 && experiences.length > 3
+  const gridLayout = getGridLayout(org_experiences.length)
+  const shouldCenterLastItems = org_experiences.length % 3 !== 0 && org_experiences.length > 3
 
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/70 backdrop-blur-sm">
@@ -58,14 +58,14 @@ export default function ExperienceComponent() {
           viewport={{ once: true }}
           className={`grid ${gridLayout} gap-6 lg:gap-8`}
         >
-          {experiences.map((experience, index) => {
+          {org_experiences.map((experience, index) => {
             // Determine if this item should be centered
-            const isLastRow = shouldCenterLastItems && index >= experiences.length - (experiences.length % 3)
+            const isLastRow = shouldCenterLastItems && index >= org_experiences.length - (org_experiences.length % 3)
             const centerClass = isLastRow ? "lg:col-start-2" : ""
 
             // For 2 items remainder, center both items
-            const isTwoItemsRemainder = experiences.length % 3 === 2 && index >= experiences.length - 2
-            const twoItemsCenterClass = isTwoItemsRemainder && index === experiences.length - 2 ? "lg:col-start-2" : ""
+            const isTwoItemsRemainder = org_experiences.length % 3 === 2 && index >= org_experiences.length - 2
+            const twoItemsCenterClass = isTwoItemsRemainder && index === org_experiences.length - 2 ? "lg:col-start-2" : ""
 
             return (
               <motion.div
