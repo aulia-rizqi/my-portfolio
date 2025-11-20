@@ -8,23 +8,24 @@ export interface Achievement {
   description: string
   icon: any
   color: string
-  certificateImage?: string // New field for certificate image
-  hasCertificate?: boolean // Flag to indicate if certificate exists
+  certificateImage?: string
+  hasCertificate?: boolean
 }
 
 export const achievements: Achievement[] = [
   {
-    id: 1,
-    title: "Finalist Business Proposal Competition TEC Festival ITB 2024",
-    category: "Business Competition",
-    year: "2024",
-    description: "Berhasil masuk ke tahap final kompetisi proposal bisnis tingkat nasional",
+    id: 0,
+    title: "Finalis Hackathon IFEST 2025",
+    category: "Kompetisi",
+    year: "2025",
+    description: "Berhasil meraih posisi finalis 15 besar pada kompetisi Hackathon IFEST 2025",
     icon: Medal,
     color: "from-blue-400 to-indigo-500",
-    hasCertificate: false,
+    hasCertificate: true,
+    certificateImage: "/certificates/ifest.jpeg?height=600&width=800&text=IFEST+Certificate",
   },
   {
-    id: 2,
+    id: 1,
     title: "Juara 1 Lomba PKM-PI OIM UI 2024",
     category: "Kompetisi Akademik",
     year: "2024",
@@ -35,7 +36,7 @@ export const achievements: Achievement[] = [
     certificateImage: "/certificates/pkm.jpg?height=600&width=800&text=PKM-PI+Certificate",
   },
   {
-    id: 3,
+    id: 2,
     title: "Awardee Hackathon UI Incubate 2025",
     category: "Inkubasi",
     year: "2025",
@@ -44,5 +45,15 @@ export const achievements: Achievement[] = [
     color: "from-yellow-400 to-orange-500",
     hasCertificate: true,
     certificateImage: "/certificates/ui-incubate.jpg?height=600&width=800&text=PKM-PI+Certificate",
+  },
+  {
+    id: 3,
+    title: "Finalist Business Proposal Competition TEC Festival ITB 2024",
+    category: "Business Competition",
+    year: "2024",
+    description: "Berhasil masuk ke tahap final kompetisi proposal bisnis tingkat nasional",
+    icon: Medal,
+    color: "from-blue-400 to-indigo-500",
+    hasCertificate: false,
   },
 ]
