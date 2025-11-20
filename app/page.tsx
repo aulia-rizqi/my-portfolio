@@ -4,6 +4,7 @@ import Header from "@/components/Header"
 import Hero from "@/components/Hero"
 import AboutMe from "@/components/AboutMe"
 import Skills from "@/components/Skills"
+import ProExperience from "@/components/ProExperience"
 import Experience from "@/components/Experience"
 import Achievements from "@/components/Achievements"
 import Contact from "@/components/Contact"
@@ -16,6 +17,7 @@ export default function Portfolio() {
       <Hero />
       <AboutMe />
       <Skills />
+      <ProExperience />
       <Experience />
       <Achievements />
       <Contact />

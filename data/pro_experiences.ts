@@ -18,7 +18,7 @@ export interface ProExperience {
   links?: ProExperienceLink[]
 }
 
-export const pro_experience: ProExperience[] = [
+export const pro_experiences: ProExperience[] = [
   {
     id: 0,
     title: "Technical Writer Intern",
@@ -53,9 +53,9 @@ export const pro_experience: ProExperience[] = [
       "Membantu penyusunan dokumen proyek seperti project charter, project plan, dan evaluasi pasca proyek.",
       "Mengoptimalkan proses kerja dengan mengusulkan perbaikan alur proyek untuk meningkatkan efisiensi dan akurasi.",
     ],
-    hasImage: false,
-    mainImage: "",
-    gallery: [],
+    hasImage: true,
+    mainImage: "/experiences/kap/1.jpeg",
+    gallery: ["/experiences/kap/1.jpeg"],
     iconType: "sparkles",
   },
   {
