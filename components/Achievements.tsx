@@ -12,21 +12,8 @@ import { fadeInUp, staggerContainer } from "@/utils/animations"
 export default function Achievements() {
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null)
 
-  // Function to determine grid layout based on number of items
-  const getGridLayout = (itemCount: number) => {
-    if (itemCount === 1) return "grid-cols-1 max-w-md mx-auto"
-    if (itemCount === 2) return "grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto"
-    if (itemCount % 3 === 1 && itemCount > 3) {
-      return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-    }
-    if (itemCount % 3 === 2 && itemCount > 3) {
-      return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-    }
-    return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-  }
-
-  const gridLayout = getGridLayout(achievements.length)
-  const shouldCenterLastItems = achievements.length % 3 !== 0 && achievements.length > 3
+  // Always use 3 columns for >=3 items, left aligned
+  const gridLayout = "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
   return (
     <section id="achievements" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -55,19 +42,10 @@ export default function Achievements() {
           viewport={{ once: true }}
           className={`grid ${gridLayout} gap-8`}
         >
-          {achievements.map((achievement, index) => {
-            const IconComponent = achievement.icon
-
-            // Determine if this item should be centered
-            const isLastRow = shouldCenterLastItems && index >= achievements.length - (achievements.length % 3)
-            const centerClass = isLastRow ? "lg:col-start-2" : ""
-
-            // For 2 items remainder, center both items
-            const isTwoItemsRemainder = achievements.length % 3 === 2 && index >= achievements.length - 2
-            const twoItemsCenterClass = isTwoItemsRemainder && index === achievements.length - 2 ? "lg:col-start-2" : ""
-
+          {achievements.map((achievement) => {
+            const IconComponent = achievement.icon;
             return (
-              <motion.div key={achievement.id} variants={fadeInUp} className={`${centerClass} ${twoItemsCenterClass}`}>
+              <motion.div key={achievement.id} variants={fadeInUp}>
                 <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 rounded-3xl overflow-hidden bg-gradient-to-br from-white to-yellow-50 relative group">
                   {/* Certificate Preview Badge */}
                   {achievement.hasCertificate && (
