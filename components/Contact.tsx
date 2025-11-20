@@ -24,7 +24,7 @@ export default function Contact() {
               <Mail className="h-8 w-8 text-white" />
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Mari Terhubung</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Let's Connect</h2>
           <p className="text-xl text-blue-100 mb-12 leading-relaxed">
             Siap berkolaborasi dalam proyek selanjutnya? Mari diskusikan bagaimana kita bisa bekerja sama.
           </p>

@@ -31,7 +31,7 @@ export default function Achievements() {
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6">
-            Prestasi & Penghargaan
+            Award & Certifications
           </h2>
         </motion.div>
 

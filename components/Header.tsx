@@ -21,12 +21,12 @@ export default function Header() {
   }
 
   const menuItems = [
-    { id: "hero", label: "Beranda" },
-    { id: "about", label: "Tentang" },
-    { id: "skill", label: "Keahlian" },
-    { id: "experience", label: "Pengalaman" },
-    { id: "achievements", label: "Prestasi" },
-    { id: "contact", label: "Kontak" },
+    { id: "hero", label: "Home" },
+    { id: "about", label: "About Me" },
+    { id: "skill", label: "Skills" },
+    { id: "experience", label: "Experiences" },
+    { id: "achievements", label: "Achievements" },
+    { id: "contact", label: "Contact" },
   ]
 
   return (

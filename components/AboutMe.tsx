@@ -20,15 +20,15 @@ export default function AboutMe() {
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6">
-            Tentang Saya
+            About Me
           </h2>
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-lg">
             <p className="text-lg text-blue-800 leading-relaxed">
-              Saya adalah mahasiswa Sistem Informasi Universitas Indonesia yang dikenal sebagai individu proaktif, adaptif, dan berorientasi pada eksekusi. Berpengalaman memimpin proyek teknologi maupun sosial, 
+              Saya adalah mahasiswa Sistem Informasi Universitas Indonesia yang dikenal sebagai individu proaktif, adaptif, dan berorientasi pada eksekusi. Berpengalaman memimpin proyek teknologi maupun sosial,
               menyusun dokumen kebutuhan produk, serta mengelola tim secara efisien untuk mencapai target tepat waktu.
             </p>
             <p className="text-lg text-blue-800 leading-relaxed mt-4">
-              Saya terbiasa bekerja dalam lingkungan yang dinamis, mengoordinasikan berbagai pemangku kepentingan, dan memastikan proyek berjalan sesuai rencana. Pengalaman ini mengasah kemampuan saya dalam kepemimpinan, 
+              Saya terbiasa bekerja dalam lingkungan yang dinamis, mengoordinasikan berbagai pemangku kepentingan, dan memastikan proyek berjalan sesuai rencana. Pengalaman ini mengasah kemampuan saya dalam kepemimpinan,
               pengambilan keputusan, serta membangun kolaborasi tim yang solid. Saya percaya pada solusi praktis, eksekusi yang terukur, dan hasil yang berkelanjutan.
             </p>
           </div>
