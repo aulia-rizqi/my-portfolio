@@ -1,38 +1,33 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Award, Sparkles } from "lucide-react"
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { org_experiences, type OrgExperience } from "@/data/org_experiences"
-import { getIcon } from "@/utils/icons"
-import { fadeInUp, staggerContainer } from "@/utils/animations"
-import ExperienceModal from "./ExperienceModal"
+import { motion } from "framer-motion";
+import { Award, Sparkles } from "lucide-react";
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { org_experiences, type OrgExperience } from "@/data/org_experiences";
+import { getIcon } from "@/utils/icons";
+import { fadeInUp, staggerContainer } from "@/utils/animations";
+import ExperienceModal from "./ExperienceModal";
 
 export default function ExperienceComponent() {
-  const [selectedExperience, setSelectedExperience] = useState<OrgExperience | null>(null)
+  const [selectedExperience, setSelectedExperience] =
+    useState<OrgExperience | null>(null);
 
-  // Function to determine grid layout based on number of items
-  const getGridLayout = (itemCount: number) => {
-    if (itemCount === 1) return "grid-cols-1 max-w-md mx-auto"
-    if (itemCount === 2) return "grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto"
-    if (itemCount % 3 === 1 && itemCount > 3) {
-      // When remainder is 1, center the last item
-      return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-    }
-    if (itemCount % 3 === 2 && itemCount > 3) {
-      // When remainder is 2, center the last two items
-      return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-    }
-    return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-  }
-
-  const gridLayout = getGridLayout(org_experiences.length)
-  const shouldCenterLastItems = org_experiences.length % 3 !== 0 && org_experiences.length > 3
+  // Always use 3 columns for >=3 items, left aligned
+  const gridLayout = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/70 backdrop-blur-sm">
+    <section
+      id="experience"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-white/70 backdrop-blur-sm"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -58,20 +53,12 @@ export default function ExperienceComponent() {
           viewport={{ once: true }}
           className={`grid ${gridLayout} gap-6 lg:gap-8`}
         >
-          {org_experiences.map((experience, index) => {
-            // Determine if this item should be centered
-            const isLastRow = shouldCenterLastItems && index >= org_experiences.length - (org_experiences.length % 3)
-            const centerClass = isLastRow ? "lg:col-start-2" : ""
-
-            // For 2 items remainder, center both items
-            const isTwoItemsRemainder = org_experiences.length % 3 === 2 && index >= org_experiences.length - 2
-            const twoItemsCenterClass = isTwoItemsRemainder && index === org_experiences.length - 2 ? "lg:col-start-2" : ""
-
+          {org_experiences.map((experience) => {
             return (
               <motion.div
                 key={experience.id}
                 variants={fadeInUp}
-                className={`flex ${centerClass} ${twoItemsCenterClass}`}
+                className="flex"
               >
                 <Card
                   className="w-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl overflow-hidden cursor-pointer hover:-translate-y-1 flex flex-col"
@@ -96,7 +83,9 @@ export default function ExperienceComponent() {
                         {experience.period}
                       </Badge>
                     </div>
-                    <CardTitle className="text-blue-800 text-lg sm:text-xl leading-tight">{experience.title}</CardTitle>
+                    <CardTitle className="text-blue-800 text-lg sm:text-xl leading-tight">
+                      {experience.title}
+                    </CardTitle>
                     <CardDescription className="text-base sm:text-lg font-medium text-indigo-600">
                       {experience.company}
                     </CardDescription>
@@ -109,15 +98,21 @@ export default function ExperienceComponent() {
 
                       {/* Bullet Points */}
                       <ul className="space-y-2 mb-4">
-                        {experience.bulletPoints.slice(0, 3).map((point, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-blue-600">
-                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span>{point}</span>
-                          </li>
-                        ))}
+                        {experience.bulletPoints
+                          .slice(0, 3)
+                          .map((point, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-start gap-2 text-sm text-blue-600"
+                            >
+                              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>{point}</span>
+                            </li>
+                          ))}
                         {experience.bulletPoints.length > 3 && (
                           <li className="text-xs text-indigo-500 italic">
-                            +{experience.bulletPoints.length - 3} poin lainnya...
+                            +{experience.bulletPoints.length - 3} poin
+                            lainnya...
                           </li>
                         )}
                       </ul>
@@ -137,7 +132,10 @@ export default function ExperienceComponent() {
                             </Badge>
                           ))}
                           {experience.links.length > 2 && (
-                            <Badge variant="outline" className="text-xs bg-gray-50 text-gray-600">
+                            <Badge
+                              variant="outline"
+                              className="text-xs bg-gray-50 text-gray-600"
+                            >
                               +{experience.links.length - 2} link
                             </Badge>
                           )}
@@ -148,18 +146,23 @@ export default function ExperienceComponent() {
                     <div className="flex items-center gap-2 text-xs sm:text-sm text-indigo-600 mt-4 pt-2 border-t border-blue-100">
                       <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
                       <span>
-                        {experience.hasImage ? "Klik untuk detail dan galeri foto" : "Klik untuk detail lengkap"}
+                        {experience.hasImage
+                          ? "Klik untuk detail dan galeri foto"
+                          : "Klik untuk detail lengkap"}
                       </span>
                     </div>
                   </CardContent>
                 </Card>
               </motion.div>
-            )
+            );
           })}
         </motion.div>
       </div>
 
-      <ExperienceModal experience={selectedExperience} onClose={() => setSelectedExperience(null)} />
+      <ExperienceModal
+        experience={selectedExperience}
+        onClose={() => setSelectedExperience(null)}
+      />
     </section>
-  )
+  );
 }
