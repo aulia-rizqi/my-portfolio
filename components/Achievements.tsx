@@ -16,7 +16,7 @@ export default function Achievements() {
   const gridLayout = "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <section id="achievements" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="achievements" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/70">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

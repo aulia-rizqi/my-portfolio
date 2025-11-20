@@ -26,7 +26,7 @@ export default function ExperienceComponent() {
   return (
     <section
       id="experience"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white/70 backdrop-blur-sm"
+      className="py-20 px-4 sm:px-6 lg:px-8 backdrop-blur-sm"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
