@@ -42,7 +42,7 @@ export default function ExperienceComponent() {
             </div>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6">
-            Organizational Experience
+            Organizational Experiences
           </h2>
         </motion.div>
 
