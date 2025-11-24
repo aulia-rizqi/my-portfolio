@@ -106,7 +106,7 @@ export const skillsData: SkillCategory[] = [
     skills: [
       {
         title: "Project Management Tools",
-        description: "**Trello & Notion** untuk manajemen proyek dan pengumpulan insight",
+        description: "**Trello, Notion, dan Jira** untuk manajemen proyek dan pengumpulan insight",
         icon: Database,
         colorClass: "bg-indigo-100 text-indigo-600",
       },
