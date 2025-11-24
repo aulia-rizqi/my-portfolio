@@ -23,7 +23,7 @@ export const pro_experiences: ProExperience[] = [
     id: 0,
     title: "Technical Writer Intern",
     company: "Direktorat Transformasi Digital Universitas Indonesia",
-    period: "Sekarang",
+    period: "Oktober - Sekarang",
     description: "Menyusun dokumen-dokumen teknis",
     bulletPoints: [
       "Menyusun dan memperbarui dokumentasi teknis sistem dan aplikasi digital yang dikembangkan oleh direktorat",
@@ -43,7 +43,7 @@ export const pro_experiences: ProExperience[] = [
     id: 10,
     title: "Project Manager Intern",
     company: "KAP Sukardi Hasan dan Rekan",
-    period: "Sekarang",
+    period: "Oktober - Sekarang",
     description: "Project Manager Intern",
     bulletPoints: [
       "Mengelola perencanaan dan eksekusi proyek internal perusahaan, termasuk penetapan scope, serta koordinasi lintas tim.",
